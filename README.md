@@ -25,7 +25,7 @@
 		PRIMARY KEY (MarkaTitle));
 
 insert into ballots (MarkaTitle,CandidateName) value ("Marka or Symbol Name","Candidate Name")
-#===================================================		
+
 ###Creating Results  table	
 > CREATE TABLE vote_results (
         Image BLOB,
@@ -36,7 +36,6 @@ insert into ballots (MarkaTitle,CandidateName) value ("Marka or Symbol Name","Ca
 
 > insert into vote_results (MarkaTitle,CandidateName,Vote_Got) SELECT MarkaTitle,CandidateName,0 FROM ballots
 
-#===================================================		
 ###Creating Voter List  table		
 > CREATE TABLE voter_list (
         name VARCHAR(100) NOT NULL,
@@ -45,7 +44,6 @@ insert into ballots (MarkaTitle,CandidateName) value ("Marka or Symbol Name","Ca
 		
 UPDATE vote_results SET Vote_got = Vote_got + 1 WHERE MarkaTitle = "dog";
 
-#===================================================		
 ##grant command					
 > grant all privileges on election.* to root@localhost identified by 'mysql501';
 > FLUSH PRIVILEGES;
